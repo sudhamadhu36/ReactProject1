@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import './LoginStyle.css';
 
 class HeaderComponent extends Component{
     constructor(props){
@@ -11,10 +12,14 @@ class HeaderComponent extends Component{
     render(){
         return(
             <div>
-                <header className="header">
-                    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href="/Login" className="navbar-brand">Home</a></div>
-                    <div><a href="/Employees" className="navbar-brand">Employees</a></div>
+                <header>
+                    <nav className="navbar navbar-expand-md navbar-dark" > 
+                    <div className="navbar">
+                    <a href="/Login" style={{color:"black",fontstyle:"System,900,bold"}}><h3>Home</h3></a>
+                    <a href="/Employees" className="navbar-brand" style={{color:"black",fontstyle:"System,900,bold"}}><h3>Employees</h3></a>
+                    <a href="/add-employee/:id" className="navbar-brand" style={{color:"black",fontstyle:"System,900,bold"}}><h3>Edit</h3></a>
+                    <a href="/add-employee" className="navbar-brand" style={{color:"black",fontstyle:"System,900,bold"}}><h3>Add</h3></a>
+                    </div>
                     </nav>
                 </header>
             </div>

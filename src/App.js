@@ -1,34 +1,18 @@
 import './App.css';
-import {BrowserRouter as BrowserRouter,Route, Routes}  from 'react-router-dom'
-
-import HeaderComponent from './components/HeaderComponent';
-import Employees from './components/Employees';
-import AddEmployee from './components/AddEmployee';
-import FooterComponent from './components/FooterComponent';
-import Registration from './components/Registration';
-import Login from './components/Login';
+import {BrowserRouter}  from 'react-router-dom'
+import Mainpage from './components/Mainpage';
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div class="app-style">
           <div classname="container">
-            <HeaderComponent />
-              <br></br>  
+          <div className="text-center" style={{color:"coral",fontStyle:"normal"}}><h2>Employee Management System</h2></div>
               <br></br>
-              <div className="container">
-                <Routes>
-                    <Route exact path="/Login" element={<Login/>}/>
-                    <Route exact path="/Employees" element={<Employees/>}/>
-                    <Route exact path="/add-employee" element={<AddEmployee/>}/>
-                    <Route exact path="/edit-employee/:id" element={<AddEmployee/>}/>
-                    <Route exact path="/Registration" element={<Registration/>}/>
-
-                 </Routes>
-              </div>  
-            <FooterComponent />
+            <Mainpage />
           </div>
       </div>
+      
     </BrowserRouter>
   );
 }
