@@ -10,17 +10,17 @@ const AddEmployee1 = () =>{
     const [dob, setDob]=useState('')
     const [salary, setSalary]=useState('')
     const [department, setDepartment]=useState('')
-    const[photo,setPhoto]=useState('')
+    //const[photo,setPhoto]=useState('')
 
     let navigate = useNavigate();
     const {id}=useParams();
 
-    const employee={empName,sex,dob,salary,department,photo};
+    const employee={empName,sex,dob,salary,department};
 
     const saveEmployee=(e)=>{
 
         e.preventDefault();
-        if(employee.empName !== "" && employee.sex !== "" && employee.dob !== "" && employee.salary !== "" && employee.department !== "" && employee.photo !== ""){
+        if(employee.empName !== "" && employee.sex !== "" && employee.dob !== "" && employee.salary !== "" && employee.department !== "" ){
             EmployeeService.createEmployee(employee).then(navigate("/Employees")).catch(e => console.log(e));
         }else{
             alert("Please fill all the inputs");
@@ -34,7 +34,7 @@ const AddEmployee1 = () =>{
                 setDob(response.data.dob);
                 setSalary(response.data.salary);
                 setDepartment(response.data.department);
-                setPhoto(response.data.photo);
+                //setPhoto(response.data.photo);
             }).catch(error => console.log(error));
         }
     }, [id])
@@ -106,7 +106,7 @@ return(
                                     onChange={(e)=>setDepartment(e.target.value)}>
                                 </input>
                             </div>
-                            <div className="form-group mb-2">
+                            {/*<div className="form-group mb-2">
                                 <label classname="form-label">Photo</label>
                                 <input
                                     type="file"
@@ -115,7 +115,7 @@ return(
                                     className="form-control"
                                     onChange={(e)=>setPhoto(e.target.files[0])}>
                                 </input>
-                            </div>
+</div>*/}
                             
                             <div>
                                 <button className="btn btn-success" onClick={(e)=> saveEmployee(e)}>Submit</button>

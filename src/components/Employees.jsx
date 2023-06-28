@@ -39,7 +39,7 @@ function Employees(){
                                 <th>DateOfBirth</th>
                                 <th>Salary </th>
                                 <th>Department</th>
-                                <th>Photo</th>
+                                {/*<th>Photo</th>*/}
                                 <th></th>
                         </tr>
                     </thead>
@@ -53,8 +53,8 @@ function Employees(){
                                         <td>{employee.dob}</td>
                                         <td>{employee.salary}</td>
                                         <td>{employee.department}</td>  
-                                        <td>{employee.photo&&(<img src={`data:image/jpeg;base64,${employee.photo}`}
-                                         alt={employee.department}/> )}</td>                      
+                                        {/*<td>{employee.photo&&(<img src={`data:image/jpeg;base64,${employee.photo}`}
+                                         alt={employee.department}/> )}</td> */}                   
                                         <td>
                                             <Link  to={`/edit-employee/${employee.id}`} >
                                                 <Button style={{backgroundColor:"violet"}}>Edit</Button>
